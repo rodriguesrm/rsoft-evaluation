@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  
+  rsoft-mail:
+    container_name: rsoftauth
+    build: 
+      context: .
+      dockerfile: RSoft.Evaluation.Web.Api/Dockerfile
+    image: rsoft/auth:1.0.0-rc
+    ports: 
+      - "5040:80"
+    environment:  
+      - ASPNETCORE_ENVIRONMENT=Production
+    networks_mode: bridge
